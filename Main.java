@@ -10,8 +10,13 @@ public class Main {
     int num = sc.nextInt();
     for (int i = 0; i < input.length(); i++) {
       for (int j = 0; j < num; j++) {
-        System.out.print((i%2 == 0)?(Character.toUpperCase(input.charAt(i))):(Character.toLowerCase(input.charAt(i))));
+        if (i%2 == 0) {
+          System.out.println((Character.toUpperCase(input.charAt(i))));
+        } else {
+          System.out.println((Character.toLowerCase(input.charAt(i))));
+        }
       }
+      // System.out.print((Character.toString((i%2 == 0)?((Character.toUpperCase(input.charAt(i)))):(Character.toLowerCase(input.charAt(i))))).repeat(num));
     }
     sc.close();
   }
