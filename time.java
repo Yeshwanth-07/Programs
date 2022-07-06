@@ -48,11 +48,3 @@ class RunTime {
     }
   }
 }
-
-public class time {
-  public static void main(String[] args) {
-    RunTime time = new RunTime();
-    time.sleep(10);
-    time.end();
-  }
-}
