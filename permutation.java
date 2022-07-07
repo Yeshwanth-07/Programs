@@ -1,7 +1,4 @@
-package Java;
-
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 class RunTime {
   final long startTime;
@@ -81,24 +78,24 @@ public class permutation {
     return arr;
   }
   public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter size of array: ");
+    int size = sc.nextInt();
+    int[] arr = new int[size];
+    for (int i = 1; i <= arr.length; i++) {
+      System.out.print("Enter element number " + i + ": ");
+      arr[i-1] = sc.nextInt();
+    }
     RunTime t = new RunTime();
-    int[] arr = { 1, 1, 1, 1};
     Arrays.sort(arr);
     System.out.format("%3d", 1);
-    System.out.print(": ");
-    for (int i : arr) {
-      System.out.print(i + " ");
-    }
-    System.out.println();
+    System.out.println(": " + Arrays.toString(arr));
     for (int per = 1; per < factorial(arr.length) && !isDesc(arr); per++) {
       arr = nextPermute(arr);
       System.out.format("%3d", per+1);
-      System.out.print(": ");
-      for (int i : arr) {
-        System.out.print(i + " ");
-      }
-      System.out.println();
+      System.out.println(": " + Arrays.toString(arr));
     }
+    sc.close();
     t.measureTime();
   }
 }
