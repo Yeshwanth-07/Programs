@@ -2,11 +2,9 @@ import java.util.*;
 
 class RunTime {
   final long startTime;
-
   RunTime() {
     startTime = System.currentTimeMillis();
   }
-
   void measureTime() {
     long milliSecond = System.currentTimeMillis() - startTime;
     long hour = milliSecond / 3600000;
@@ -15,22 +13,17 @@ class RunTime {
     milliSecond = milliSecond % 60000;
     long second = milliSecond / 1000;
     milliSecond = milliSecond % 1000;
-    System.out.print("Runtime: ");
+    System.out.print("Runtime: ");  
     if (hour > 0) {
-      System.out.println(hour + ((hour == 1) ? (" Hour ") : (" Hours "))
-          + minutes + ((minutes == 1 || minutes == 0) ? (" Minute ") : (" Minutes "))
-          + second + ((second == 1 || second == 0) ? (" Second ") : (" Seconds "))
-          + milliSecond + ((milliSecond == 1 || milliSecond == 0) ? (" MilliSecond ") : (" MilliSeconds ")));
-    } else if (minutes > 0) {
-      System.out.println(minutes + ((minutes == 1) ? (" Minute ") : (" Minutes "))
-          + second + ((second == 1 || second == 0) ? (" Second ") : (" Seconds "))
-          + milliSecond + ((milliSecond == 1 || milliSecond == 0) ? (" MilliSecond ") : (" MilliSeconds ")));
-    } else if (second > 0) {
-      System.out.println(second + ((second == 1) ? (" Second ") : (" Seconds "))
-          + milliSecond + ((milliSecond == 1 || milliSecond == 0) ? (" MilliSecond ") : (" MilliSeconds ")));
-    } else {
-      System.out.println(milliSecond + ((milliSecond == 1 || milliSecond == 0) ? (" MilliSecond ") : (" MilliSeconds ")));
+      System.out.print(hour + ((hour == 1) ? (" Hour ") : (" Hours ")));
     }
+    if (minutes > 0) {
+      System.out.print(minutes + ((minutes == 1) ? (" Minute ") : (" Minutes "))); 
+    }
+    if (second > 0) {
+      System.out.print(second + ((second == 1) ? (" Second ") : (" Seconds ")));
+    }
+    System.out.println(milliSecond + ((milliSecond < 2) ? (" MilliSecond ") : (" MilliSeconds ")));
   }
 }
 public class permutation {
